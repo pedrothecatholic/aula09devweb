@@ -3,13 +3,14 @@
 require("./alunos.php");
 require("./funcoes.php");
 
-//criar a função (trazer do exercício) 
 
-//verificar se novaNota está setada 
-
-//se sim, receber os dados via $_GET
-
-//chamar a função de alterarNota
+//verificar se novaNota está setada (OK) 
+if(isset($_GET["novaNota"])) {
+    $nome = $_GET["nomeAluno"];
+    $nota = $_GET["novaNota"];
+    
+    alterarNotaAluno($alunos, $nome, $nota);
+}
 
 aprovarReprovar($alunos);
 
@@ -56,7 +57,7 @@ aprovarReprovar($alunos);
     <div class="container-form-nota">
         <form>
             <input type="number" name="novaNota" placeholder="Digite a nova nota">
-        <input type="hidden" id="nomeAluno" name="nomeAluno" />
+            <input type="hidden" id="nomeAluno" name="nomeAluno" />
             <button>Alterar</button>
         </form>
     </div>
